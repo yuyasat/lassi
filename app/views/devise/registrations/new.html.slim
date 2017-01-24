@@ -1,0 +1,33 @@
+.sign-up-forms
+  .sign-up-h2
+    = image_tag 'logo-yv.png', class: 'logo-yv'
+    h2
+      | 会員登録
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .field
+      = f.label :email
+      = f.email_field :email, autofocus: true, class: 'form-field'
+      - if resource.errors.include?(:email)
+        .error-field
+          = resource.errors.full_messages_for(:email).first
+    .field
+      = f.label :password
+      = f.password_field :password, autocomplete: 'off', class: 'form-field'
+      - if resource.errors.include?(:password)
+        .error-field
+          = resource.errors.full_messages_for(:password).first
+    .field
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-field'
+      - if resource.errors.include?(:password_confirmation)
+        .error-field
+          = resource.errors.full_messages_for(:password_confirmation).first
+    .field
+      = f.label :nickname
+      = f.text_field :nickname, autocomplete: 'off', class: 'form-field'
+      - if resource.errors.include?(:nickname)
+        .error-field
+          = resource.errors.full_messages_for(:nickname).first
+    .actions
+      = f.submit '会員登録', class: 'devise-submit'
+  = render "devise/shared/links"

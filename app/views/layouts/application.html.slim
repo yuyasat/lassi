@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title
+      | みんなでつくるぼーとまっち - Yourvotes
+    meta[name='keywords' content='政策,政党,選挙,ボートマッチ']
+    meta[name='description' content='誰もがぼーとまっちを作れる政策プラットフォームです。これまで答えるだけだったぼーとまっちが誰でも作成可能に！']
+    meta[property='og:site_name' content='みんなでつくるぼーとまっち - Yourvotes']
+    meta[property='og:type' content='website']
+    meta[property='og:title' content='みんなでつくるぼーとまっち']
+    meta[property='og:url' content='https://yourvotes.jp/']
+    meta[property='og:image' content='https://yourvotes.jp/og-yourvotes.png']
+    meta[property='og:description' content='誰もがぼーとまっちを作れる政策プラットフォームです。これまで答えるだけだったぼーとまっちが誰でも作成可能に！']
+    meta[name='twitter:card' content='website']
+    meta[name='twitter:site' content='みんなでつくるぼーとまっち - Yourvotes']
+    meta[name="twitter:creator" content='@yourvotes']
+    meta[property='twitter:image:src' content='https://yourvotes.jp/og-twitter-yourvotes.png']
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = Gon::Base.render_data({})
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body.container-fluid
+    header
+      nav
+        ul.nav-top
+          li
+            = link_to 'Yourvotes', root_path
+          - if user_signed_in?
+            li
+              = link_to 'プロフィール変更', edit_user_registration_path
+            li
+              = link_to 'マイページ', mypage_path
+            li
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+          - else
+            li
+              = link_to 'サインアップ', new_user_registration_path
+            li
+              = link_to 'ログイン', new_user_session_path
+    - if notice.present?
+      p.notice
+        = notice
+    - if alert.present?
+      p.alert
+        = alert
+    .container
+      = yield
+    footer
+      div
+        |  Copyright © 2016 Yourvotes All Rights Reserved.&nbsp;
+        = link_to 'GitHub', 'https://github.com/yuyataki/app_votematch'

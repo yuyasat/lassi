@@ -1,0 +1,28 @@
+.sign-up-forms
+  .sign-up-h2
+  h2
+    | プロフィール変更
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :email
+      = f.email_field :email, autofocus: true, class: 'form-field'
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      div
+        | Currently waiting confirmation for:
+        = resource.unconfirmed_email
+    .field
+      = f.label :password, 'パスワード（変更しないの場合は未入力）', class: 'form-field'
+      = f.password_field :password, autocomplete: 'off', class: 'form-field'
+    .field
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-field'
+    .field
+      = f.label :nickname
+      = f.text_field :nickname, autocomplete: 'off', class: 'form-field'
+    .field
+      = f.label :current_password
+      = f.password_field :current_password, autocomplete: 'off', class: 'form-field'
+    .actions
+      = f.submit '変更', class: 'devise-submit'
+  = link_to '戻る', :back, class: 'user-login'
