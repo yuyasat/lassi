@@ -1,4 +1,3 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
@@ -18,7 +17,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel?presets[]=react,presets[]=es2015,presets[]=stage-2'
+        loader: 'babel?presets[]=es2015,presets[]=stage-2'
       },
       {
         test: /\.scss$/,

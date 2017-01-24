@@ -1,7 +1,6 @@
 .ruby-version
 *.log
 tmp/*
-*.swp
 /frontend/node_modules
 /.bundle
 /coverage
