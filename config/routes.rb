@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
 
+  resources :threads
+
   get '/404' => 'errors#render_404'
   get '/500' => 'errors#render_500'
   # The priority is based upon order of creation: first created -> highest priority.

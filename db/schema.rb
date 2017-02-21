@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020000000) do
+ActiveRecord::Schema.define(version: 20170224000000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "plans", force: :cascade do |t|
+    t.string  "key",                               null: false
+    t.integer "provider_id",                       null: false
+    t.string  "name",                              null: false
+    t.integer "data_num",          default: 0,     null: false
+    t.integer "sms_num",           default: 0,     null: false
+    t.integer "voice_num",         default: 0,     null: false
+    t.integer "price",                             null: false
+    t.string  "down_speed",        default: "",    null: false
+    t.string  "up_speed",          default: "",    null: false
+    t.string  "voice_price",       default: "",    null: false
+    t.string  "sms_domestic"
+    t.string  "sms_international"
+    t.boolean "carry_over",        default: false, null: false
+    t.string  "carry_over_text"
+    t.string  "admin_fee_name"
+    t.string  "admin_fee"
+    t.string  "add_sim"
+    t.index ["provider_id"], name: "index_plans_on_provider_id", using: :btree
+  end
+
+  create_table "qa_threads", force: :cascade do |t|
+    t.integer "user_id",  null: false
+    t.string  "title",    null: false
+    t.integer "carrier",  null: false
+    t.string  "terminal", null: false
+    t.string  "content",  null: false
+    t.boolean "updated",  null: false
+    t.index ["user_id"], name: "index_qa_threads_on_user_id", using: :btree
+  end
+
+  create_table "thread_categories", force: :cascade do |t|
+    t.integer "qa_thred_id", null: false
+    t.integer "category",    null: false
+    t.index ["qa_thred_id"], name: "index_thread_categories_on_qa_thred_id", using: :btree
+  end
+
+  create_table "thread_labels", force: :cascade do |t|
+    t.integer "qa_thred_id", null: false
+    t.integer "label",       null: false
+    t.index ["qa_thred_id"], name: "index_thread_labels_on_qa_thred_id", using: :btree
+  end
+
+  create_table "thread_tags", force: :cascade do |t|
+    t.integer "qa_thred_id", null: false
+    t.integer "tag",         null: false
+    t.index ["qa_thred_id"], name: "index_thread_tags_on_qa_thred_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
