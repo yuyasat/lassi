@@ -6,7 +6,9 @@ class CreateQaThreads < ActiveRecord::Migration[5.0]
       t.integer :carrier, null: false
       t.string :terminal, null: false
       t.string :content, null: false
-      t.boolean :updated, null: false
+      t.boolean :updated, null: false, default: false
+
+      t.timestamps null: false
     end
   end
 end

@@ -18,6 +18,8 @@ class CreatePlans < ActiveRecord::Migration[5.0]
       t.string :admin_fee_name
       t.string :admin_fee
       t.string :add_sim
+
+      t.timestamps null: false
     end
   end
 end

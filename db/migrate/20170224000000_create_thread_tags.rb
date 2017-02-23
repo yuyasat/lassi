@@ -3,6 +3,8 @@ class CreateThreadTags < ActiveRecord::Migration[5.0]
     create_table :thread_tags do |t|
       t.references :qa_thred, null: false
       t.integer    :tag, null: false
+
+      t.timestamps null: false
     end
   end
 end
