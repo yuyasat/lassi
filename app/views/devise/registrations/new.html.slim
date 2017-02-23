@@ -22,12 +22,6 @@
       - if resource.errors.include?(:password_confirmation)
         .error-field
           = resource.errors.full_messages_for(:password_confirmation).first
-    .field
-      = f.label :nickname
-      = f.text_field :nickname, autocomplete: 'off', class: 'form-field'
-      - if resource.errors.include?(:nickname)
-        .error-field
-          = resource.errors.full_messages_for(:nickname).first
     .actions
       = f.submit '会員登録', class: 'devise-submit'
   = render "devise/shared/links"

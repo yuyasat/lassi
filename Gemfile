@@ -17,6 +17,7 @@ gem 'draper', '>= 3.0.0.pre1'
 gem 'gon'
 gem 'unicorn'
 gem 'activerecord-import'
+gem 'enum_help'
 gem 'rails_12factor', group: :production
 
 group :development do

@@ -1,0 +1,23 @@
+div
+  h2
+    | 掲示板に質問してみよう！
+  div
+    | ディスクリプションディスクリプション
+  div
+    = link_to '投稿に関する質問はこちら', '/'
+div
+  = form_for(@qa_thread, url: { action: :confirm }) do |f|
+    div
+      | タイトル
+      = f.text_field :title
+    div
+      | キャリア
+      = f.select :carrier, QaThread.carriers_i18n.invert
+    div
+      | 端末
+      = f.text_field :terminal
+    div
+      | 本文
+      = f.text_area :content, size: "60x10"
+    div
+      = f.submit '次に進む'

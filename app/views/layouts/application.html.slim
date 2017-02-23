@@ -17,8 +17,6 @@ html
             li
               = link_to 'プロフィール変更', edit_user_registration_path
             li
-              = link_to 'マイページ', mypage_path
-            li
               = link_to 'ログアウト', destroy_user_session_path, method: :delete
           - else
             li

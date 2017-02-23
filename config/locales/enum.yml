@@ -1,0 +1,8 @@
+ja:
+  enums:
+    qa_thread:
+      carrier:
+        other: その他
+        docomo: docomo
+        au: au
+        softbank: softbank

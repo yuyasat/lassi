@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
 
-  resources :threads
+  resources :qa_threads do
+    post 'confirm', on: :collection
+  end
 
   get '/404' => 'errors#render_404'
   get '/500' => 'errors#render_500'

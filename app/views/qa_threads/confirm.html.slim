@@ -1,0 +1,24 @@
+div
+  h2
+    | 掲示板に質問してみよう！
+  div
+    | ディスクリプションディスクリプション
+  div
+    = link_to '投稿に関する質問はこちら', '/'
+div
+  = form_for(@qa_thread) do |f|
+    div
+      | タイトル
+      = @qa_thread.title
+    div
+      | キャリア
+      = @qa_thread.carrier
+    div
+      | 端末
+      = @qa_thread.terminal
+    div
+      | 本文
+      = @qa_thread.content
+    div
+      = link_to '編集し直す', new_qa_thread_path
+      = f.submit '次に進む'
