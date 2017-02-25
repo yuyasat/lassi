@@ -4,3 +4,4 @@ tmp/*
 /frontend/node_modules
 /.bundle
 /coverage
+/app/assets/javascripts/*
