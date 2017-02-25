@@ -1,0 +1,27 @@
+= @qa_thread.inspect
+.clearfix
+  .qa_thread-main
+    div
+      = @qa_thread.title
+    div
+      = @qa_thread.content
+  .qa_thread-sidebar
+    div
+      | このカテゴリの質問
+    div
+      | あいうえお
+div
+  = link_to '回答する', root_path
+  div
+    = form_for(@qa_reply) do |f|
+      = f.hidden_field :qa_thread_id, value: @qa_thread.id
+      = f.text_area :content
+      = f.submit '回答する'
+
+div
+  - @qa_replies.each do |reply|
+    = @qa_replies.count
+    = "aaaaa"
+    = form_for(reply.replies.new) do |rf|
+      = rf.text_area :content
+    = reply.content

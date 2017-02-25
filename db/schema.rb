@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224000000) do
+ActiveRecord::Schema.define(version: 20170225000000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,19 @@ ActiveRecord::Schema.define(version: 20170224000000) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.index ["provider_id"], name: "index_plans_on_provider_id", using: :btree
+  end
+
+  create_table "qa_replies", force: :cascade do |t|
+    t.integer  "user_id",                      null: false
+    t.integer  "qa_thread_id",                 null: false
+    t.integer  "qa_reply_id",  default: 0,     null: false
+    t.string   "content",                      null: false
+    t.boolean  "updated",      default: false, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["qa_reply_id"], name: "index_qa_replies_on_qa_reply_id", using: :btree
+    t.index ["qa_thread_id"], name: "index_qa_replies_on_qa_thread_id", using: :btree
+    t.index ["user_id"], name: "index_qa_replies_on_user_id", using: :btree
   end
 
   create_table "qa_threads", force: :cascade do |t|

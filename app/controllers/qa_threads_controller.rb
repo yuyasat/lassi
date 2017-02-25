@@ -16,6 +16,12 @@ class QaThreadsController < ApplicationController
     # TODO: Thanks modal
   end
 
+  def show
+    @qa_thread = QaThread.find(params[:id])
+    @qa_reply = @qa_thread.replies.new
+    @qa_replies = @qa_thread.replies
+  end
+
   private
 
   def qa_thread_params

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :qa_threads, path: 'qa' do
     post 'confirm', on: :collection
   end
+  resources :qa_replies
 
   get '/404' => 'errors#render_404'
   get '/500' => 'errors#render_500'
