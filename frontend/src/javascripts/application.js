@@ -1,3 +1,1 @@
-require('../stylesheets/application.scss');
-
-import './index'
+require('../../node_modules/font-awesome/css/font-awesome.css');
