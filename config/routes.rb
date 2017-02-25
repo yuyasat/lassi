@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
 
-  resources :qa_threads do
+  resources :qa_threads, path: 'qa' do
     post 'confirm', on: :collection
   end
 
