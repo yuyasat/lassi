@@ -1,4 +1,3 @@
-= @qa_thread.inspect
 .clearfix
   .qa_thread-main
     div
@@ -17,11 +16,15 @@ div
       = f.hidden_field :qa_thread_id, value: @qa_thread.id
       = f.text_area :content
       = f.submit '回答する'
-
 div
   - @qa_replies.each do |reply|
-    = @qa_replies.count
-    = "aaaaa"
+    div
+      = reply.content
+    - reply.replies.each do |child_reply|
+      div
+        = child_reply.content
     = form_for(reply.replies.new) do |rf|
+      = rf.hidden_field :qa_thread_id, value: @qa_thread.id
+      = rf.hidden_field :qa_reply_id, value: reply.id
       = rf.text_area :content
-    = reply.content
+      = rf.submit '返信する'

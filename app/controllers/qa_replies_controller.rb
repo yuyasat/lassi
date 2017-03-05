@@ -9,6 +9,6 @@ class QaRepliesController < ApplicationController
   private
 
   def qa_reply_params
-    params.require(:qa_reply).permit(:qa_thread_id, :content)
+    params.require(:qa_reply).permit(:qa_thread_id, :qa_reply_id, :content)
   end
 end
