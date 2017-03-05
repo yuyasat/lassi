@@ -12,8 +12,14 @@ class QaThreadsController < ApplicationController
   def create
     qa_thread = current_user.qa_threads.new(session[:qa_thread])
     qa_thread.save
-    # TODO: redirect
     # TODO: Thanks modal
+    redirect_to qa_thread_path(qa_thread)
+  end
+
+  def show
+    @qa_thread = QaThread.find(params[:id])
+    @qa_replies = @qa_thread.replies.directly_below.eager_load(:replies)
+    @qa_reply = @qa_thread.replies.new
   end
 
   private

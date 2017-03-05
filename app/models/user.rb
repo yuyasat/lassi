@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   # :confirmable, :lockable, :timeoutable
   has_many :qa_threads
+  has_many :qa_replies
 
   validates :password, length: { in: Devise.password_length }
 end
