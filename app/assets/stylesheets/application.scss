@@ -20,4 +20,5 @@ $legacy-support-for-ie7: false;
 $experimental-support-for-svg: true;
 
 @import '/common/colors',
+'/common/mixin',
 '/pc/atomic/atoms';
