@@ -13,3 +13,11 @@
  *= require_self
  *= require_tree .
  */
+
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+
+$experimental-support-for-svg: true;
+
+@import '/common/colors',
+'/pc/atomic/atoms';
