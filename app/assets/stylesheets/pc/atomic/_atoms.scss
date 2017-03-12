@@ -1,6 +1,14 @@
 // atomic design
+@import '/common/colors';
+
+.a__logo {
+  background-image: asset-data-url('logo.svg');
+  width: 140px;
+  height: 44px;
+  background-size: cover;
+}
 
 .a__button {
-  background-color: #FF8F00;//$main-color;
+  background-color: $main-color;
   padding: 20px 30px;
 }
