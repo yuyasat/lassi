@@ -11,10 +11,17 @@
  * file per style scope.
  *
  *= require_self
- *= require_tree .
  */
 
 $legacy-support-for-ie6: false;
 $legacy-support-for-ie7: false;
 
 $experimental-support-for-svg: true;
+
+@import
+  'common/html5reset-1.6.1',
+  'common/colors',
+  'common/mixin',
+  'pc/atomic/atoms',
+  'pc/atomic/molecules',
+  'pc/atomic/organisms';
