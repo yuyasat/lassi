@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312000000) do
+ActiveRecord::Schema.define(version: 20170321000000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
   create_table "plans", force: :cascade do |t|
     t.string   "key",                               null: false
@@ -71,6 +72,24 @@ ActiveRecord::Schema.define(version: 20170312000000) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["user_id"], name: "index_qa_threads_on_user_id", using: :btree
+  end
+
+  create_table "simulation_results", force: :cascade do |t|
+    t.uuid     "simulation_id", null: false
+    t.integer  "plan_id",       null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["plan_id"], name: "index_simulation_results_on_plan_id", using: :btree
+  end
+
+  create_table "simulations", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.integer  "carrier",    null: false
+    t.integer  "capacity",   null: false
+    t.boolean  "voice",      null: false
+    t.boolean  "sms",        null: false
+    t.integer  "speed",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "thread_categories", force: :cascade do |t|

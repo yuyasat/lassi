@@ -1,0 +1,24 @@
+= form_for @simulation do |f|
+  = f.select :carrier, Simulation.carriers.map { |k, _| [k, k] }
+  br
+  | 通信量
+  = f.text_field :capacity
+  | GB
+  br
+  | 音声通話
+  = f.radio_button 'voice', '1', checked: true
+  | 利用する
+  = f.radio_button 'voice', '2'
+  | 利用しない
+  br
+  | SMS
+  = f.radio_button 'sms', '1', checked: true
+  | 利用する
+  = f.radio_button 'sms', '2'
+  | 利用しない
+  br
+  | 通信速度
+  = f.text_field 'speed'
+  | Mbps
+  br
+  = f.submit '診断する'
