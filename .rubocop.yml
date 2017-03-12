@@ -73,3 +73,6 @@ AsciiComments:
 
 SignalException:
     EnforcedStyle: only_raise
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
