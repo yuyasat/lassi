@@ -2,11 +2,11 @@
 // molecules
 
 header {
-  &.mol__global-header {
+  border-bottom: 4px solid #3C7CD6;
+  .mol__global-header {
     width: 970px;
     margin: auto;
     padding: 5px 0;
-    border-bottom: 4px solid #3C7CD6;
     @include simple-flex();
     @include justify(space-between);
 
@@ -14,11 +14,19 @@ header {
       display: inline-block;
       .a__header-logo {
         display: inline-block;
+        height: 40px;
       }
       ul.nav-lists {
-        display: inline-block;
         li {
-          display: inline-block;
+          display: table-cell;
+          vertical-align: middle;
+          box-sizing: border-box;
+          height: 40px;
+          padding: 0 18px;
+          border-left: 1px solid #e2e2e2;
+          &:last-child {
+            border-right: 1px solid #e2e2e2;
+          }
         }
       }
     }

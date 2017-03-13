@@ -9,11 +9,11 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    header.mol__global-header
+    header
+      div.mol__global-header
         div.a__logo
           a href='/' title='トップ'
         nav.header-nav
-          div.a__header-logo
           ul.nav-lists
             li コミュニティ
             / 一旦コメントアウト
@@ -31,7 +31,8 @@ html
 
             - if user_signed_in?
               li
-                = link_to 'プロフィール変更', edit_user_registration_path
+                div
+                  = link_to 'プロフィール変更', edit_user_registration_path
               li
                 = link_to 'ログアウト', destroy_user_session_path, method: :delete
             - else
