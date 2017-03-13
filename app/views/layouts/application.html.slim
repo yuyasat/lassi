@@ -2,22 +2,22 @@ doctype html
 html
   head
     title
-      | コードネーム - lassi
+      | Simnity | SIMのお悩みをみんなで解決するQ&Aサイト
+      <%# TODO ogp、description等の設定もする #>
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = Gon::Base.render_data({})
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    div.org__g-header
-      header
+    header
+      div.mol__global-header
         div.a__logo
-        nav
-          div.a__header-logo
-          ul.nav-top
-            li
-              = link_to 'Top', root_path
-            - if user_signed_in?
-              li コミュニティ
+          a href='/' title='トップ'
+        nav.header-nav
+          ul.nav-lists
+            li コミュニティ
+            / 一旦コメントアウト
+            / nav
               ul
                 li
                   / url が決まっていないので一旦 root_path を入れてます
@@ -28,22 +28,14 @@ html
                 li
                   / url が決まっていないので一旦 root_path を入れてます
                   = link_to '切り替え後のセットアップ', root_path
+
+            - if user_signed_in?
               li
-                = link_to 'プロフィール変更', edit_user_registration_path
+                div
+                  = link_to 'プロフィール変更', edit_user_registration_path
               li
                 = link_to 'ログアウト', destroy_user_session_path, method: :delete
             - else
-              li コミュニティ
-              ul
-                li
-                  / url が決まっていないので一旦 root_path を入れてます
-                  = link_to '格安SIMの選び方', root_path
-                li
-                  / url が決まっていないので一旦 root_path を入れてます
-                  = link_to '事業者別Q&A', root_path
-                li
-                  / url が決まっていないので一旦 root_path を入れてます
-                  = link_to '切り替え後のセットアップ', root_path
               li
                 = link_to 'サインアップ', new_user_registration_path
               li
@@ -57,6 +49,6 @@ html
     .container
       = yield
     footer
-      div
+      div.copyright
         | Copyright © 2017 lassi All Rights Reserved.&nbsp;
         = link_to 'GitHub', 'https://github.com/yuyasat/lassi'

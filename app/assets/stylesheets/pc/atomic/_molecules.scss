@@ -1,0 +1,44 @@
+// atomic design
+// molecules
+
+// header menu の css
+header {
+  border-bottom: 4px solid #3C7CD6;
+  .mol__global-header {
+    width: 970px;
+    margin: auto;
+    padding: 5px 0;
+    @include simple-flex();
+    @include justify(space-between);
+
+    nav.header-nav {
+      display: inline-block;
+      .a__header-logo {
+        display: inline-block;
+        height: 40px;
+      }
+      ul.nav-lists {
+        li {
+          display: table-cell;
+          vertical-align: middle;
+          box-sizing: border-box;
+          height: 40px;
+          padding: 0 18px;
+          border-left: 1px solid #e2e2e2;
+          &:last-child {
+            border-right: 1px solid #e2e2e2;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  .copyright {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #585858;
+  }
+}
