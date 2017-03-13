@@ -1,6 +1,7 @@
 // atomic design
 // molecules
 
+// header menu の css
 header {
   border-bottom: 4px solid #3C7CD6;
   .mol__global-header {
@@ -30,5 +31,14 @@ header {
         }
       }
     }
+  }
+}
+
+footer {
+  .copyright {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #585858;
   }
 }
