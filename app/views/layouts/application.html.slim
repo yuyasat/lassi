@@ -9,23 +9,25 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    header.org__g-header
-        a href='/' title='トップ'
-          div.a__logo
-        nav
+    header.mol__global-header
+        div.a__logo
+          a href='/' title='トップ'
+        nav.header-nav
           div.a__header-logo
-          ul.nav-top
+          ul.nav-lists
             li コミュニティ
-            ul
-              li
-                / url が決まっていないので一旦 root_path を入れてます
-                = link_to '格安SIMの選び方', root_path
-              li
-                / url が決まっていないので一旦 root_path を入れてます
-                = link_to '事業者別Q&A', root_path
-              li
-                / url が決まっていないので一旦 root_path を入れてます
-                = link_to '切り替え後のセットアップ', root_path
+            / 一旦コメントアウト
+            / nav
+              ul
+                li
+                  / url が決まっていないので一旦 root_path を入れてます
+                  = link_to '格安SIMの選び方', root_path
+                li
+                  / url が決まっていないので一旦 root_path を入れてます
+                  = link_to '事業者別Q&A', root_path
+                li
+                  / url が決まっていないので一旦 root_path を入れてます
+                  = link_to '切り替え後のセットアップ', root_path
 
             - if user_signed_in?
               li

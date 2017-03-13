@@ -1,0 +1,26 @@
+// atomic design
+// molecules
+
+header {
+  &.mol__global-header {
+    width: 970px;
+    margin: auto;
+    padding: 5px 0;
+    border-bottom: 4px solid #3C7CD6;
+    @include simple-flex();
+    @include justify(space-between);
+
+    nav.header-nav {
+      display: inline-block;
+      .a__header-logo {
+        display: inline-block;
+      }
+      ul.nav-lists {
+        display: inline-block;
+        li {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
