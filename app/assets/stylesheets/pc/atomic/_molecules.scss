@@ -35,6 +35,30 @@ header {
   }
 }
 
+.mol__eyecatch {
+  min-height: 300px;
+  width: 100%;
+  @include gradient(#79B8FC, #6C94FF, horizontal);
+  .mol__description {
+    padding: 40px 0;
+    text-align: center;
+    h1.caption {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: white;
+      font-weight: bold;
+      text-align: center; // justify を無効にする
+      &:first-letter {
+        font-size: 40px;
+      }
+    }
+    p {
+      color: white;
+      margin-bottom: 20px;
+    }
+  }
+}
+
 footer {
   .copyright {
     display: block;

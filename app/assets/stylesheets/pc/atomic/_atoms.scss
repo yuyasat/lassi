@@ -14,7 +14,17 @@
   }
 }
 
-.a__button {
+a.a__button {
+  display: inline-block;
   background-color: $main-color;
   padding: 20px 30px;
+  border: 2px solid white;
+  @include border-radius(10px);
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  // @include transition(all,0.3s); TODO 何故か通らない
+  &:hover {
+    background-color: #ffc522;
+  }
 }
