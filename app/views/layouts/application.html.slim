@@ -10,8 +10,8 @@ html
     = csrf_meta_tags
   body
     header
-      div.mol__global-header
-        div.a__logo
+      .mol__global-header
+        .a__logo
           a href='/' title='トップ'
         nav.header-nav
           ul.nav-lists
@@ -48,6 +48,7 @@ html
         = alert
     .container
       = yield
+      / partial 化は後でする
     footer
       div.copyright
         | Copyright © 2017 lassi All Rights Reserved.&nbsp;
