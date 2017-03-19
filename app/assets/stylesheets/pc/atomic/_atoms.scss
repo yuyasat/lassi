@@ -3,14 +3,12 @@
 
 .a__logo {
   background-image: asset-data-url('logo.svg');
-  width: 120px;
+  width: 126px;
   height: 37px;
   background-size: cover;
   display: inline-block;
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
+  &:hover {
+    opacity: 0.8;
   }
 }
 
@@ -25,7 +23,7 @@ a.a__button {
   text-decoration: none;
   // @include transition(all,0.3s); TODO 何故か通らない
   &:hover {
-    background-color: #ffc522;
+    background-color: #ffbb22;
   }
 }
 

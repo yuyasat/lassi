@@ -39,7 +39,7 @@ header {
 .org__content {
   display: block;
   width: 970px;
-  padding: 20px;
+  padding: 60px 20px;
   margin: auto;
   .org__inner-content {
     @include simple-flex;
