@@ -10,7 +10,8 @@ html {
 body {
   text-transform: none !important;
   background: #F9F7F7;
-
+  line-height: 1.5;
+  color: $basic-content-text;
 }
 
 h1,h2,h3,h4 {
@@ -22,9 +23,6 @@ a {
   color: #4C6371;
   &:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
-}
-
-p {
-  line-height: 1.3;
 }

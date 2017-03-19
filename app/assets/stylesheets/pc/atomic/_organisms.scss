@@ -2,7 +2,7 @@
 // morganisms
 
 // header menu の css
-header {
+.org__header {
   border-bottom: 4px solid #3C7CD6;
   background: white;
   .mol__global-header {
@@ -55,11 +55,41 @@ header {
 }
 
 .org__footer {
-  .copyright {
-    display: block;
-    padding: 16px;
-    text-align: center;
-    font-size: 14px;
-    color: #585858;
+  background: white;
+  .org__inner-footer {
+    width: 970px;
+    padding: 60px 20px;
+    margin: auto;
+    @include simple-flex;
+    .mol__content {
+      width : 640px;
+      .mol__wraper {
+        padding-bottom: 30px;
+        line-height: 1.3;
+        .a__caption {
+          font-weight: bold;
+        }
+        a.span {
+          padding-right: 20px;
+          font-size: 14px;
+          color: $basic-content-text;
+          &:before {
+            position: relative;
+            @include fa("\f054");
+            color: #969292;
+            padding-right: 4px
+          }
+        }
+      }
+    }
+    .mol__opinion {
+
+    }
+    .copyright {
+      display: block;
+      text-align: left;
+      font-size: 14px;
+      color: #585858;
+    }
   }
 }

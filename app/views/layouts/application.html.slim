@@ -9,7 +9,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    header
+    .org__header
       .mol__global-header
         a href='/' title='トップ'
           .a__logo
@@ -48,8 +48,4 @@ html
         = alert
     .container
       = yield
-      / partial 化は後でする
-    .org__footer
-      div.copyright
-        | Copyright © 2017 lassi All Rights Reserved.&nbsp;
-        = link_to 'GitHub', 'https://github.com/yuyasat/lassi'
+    = render 'layouts/footer'
