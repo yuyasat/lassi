@@ -10,11 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321000000) do
+ActiveRecord::Schema.define(version: 20170323000000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  create_table "makers", force: :cascade do |t|
+    t.string "name", null: false
+  end
 
   create_table "plans", force: :cascade do |t|
     t.string   "key",                               null: false
@@ -90,6 +94,26 @@ ActiveRecord::Schema.define(version: 20170321000000) do
     t.integer  "speed",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "terminals", force: :cascade do |t|
+    t.string  "name",                        null: false
+    t.integer "maker_id",                    null: false
+    t.integer "carrier",                     null: false
+    t.boolean "band1",       default: false, null: false
+    t.boolean "band3",       default: false, null: false
+    t.boolean "band8",       default: false, null: false
+    t.boolean "band11",      default: false, null: false
+    t.boolean "band18_26",   default: false, null: false
+    t.boolean "band19",      default: false, null: false
+    t.boolean "band21",      default: false, null: false
+    t.boolean "band28",      default: false, null: false
+    t.boolean "wc_band1",    default: false, null: false
+    t.boolean "wc_band6_19", default: false, null: false
+    t.boolean "wc_band8",    default: false, null: false
+    t.boolean "wc_band9",    default: false, null: false
+    t.boolean "wc_band11",   default: false, null: false
+    t.index ["maker_id"], name: "index_terminals_on_maker_id", using: :btree
   end
 
   create_table "thread_categories", force: :cascade do |t|
