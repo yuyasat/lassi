@@ -1,0 +1,3 @@
+- @simulation.plans.eager_load(:provider).order(:price).each do |plan|
+  = "プラン名: #{plan.name}, 事業者名: #{plan.provider.name}, 価格: #{plan.price}円"
+  br

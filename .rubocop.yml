@@ -68,8 +68,15 @@ StringLiterals:
 Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: comma
 
+# Allow empty condition in case statements
+Style/EmptyCaseCondition:
+  Enabled: false
+
 AsciiComments:
   Enabled: false
 
 SignalException:
     EnforcedStyle: only_raise
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

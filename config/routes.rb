@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     post 'confirm', on: :collection
   end
   resources :qa_replies
+  resources :simulations, path: 'simulate' do
+    get 'input', on: :collection
+    get 'result/:uuid' => 'simulations#result', on: :collection, as: 'result'
+  end
 
   get '/404' => 'errors#render_404'
   get '/500' => 'errors#render_500'
