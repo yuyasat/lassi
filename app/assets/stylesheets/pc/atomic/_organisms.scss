@@ -1,0 +1,65 @@
+// atomic design
+// morganisms
+
+// header menu の css
+header {
+  border-bottom: 4px solid #3C7CD6;
+  background: white;
+  .mol__global-header {
+    width: 970px;
+    margin: auto;
+    padding: 5px 0;
+    @include simple-flex();
+    @include justify(space-between);
+
+    nav.header-nav {
+      display: inline-block;
+      .a__header-logo {
+        display: inline-block;
+        height: 40px;
+      }
+      ul.nav-lists {
+        li {
+          display: table-cell;
+          vertical-align: middle;
+          box-sizing: border-box;
+          height: 40px;
+          padding: 0 18px;
+          border-left: 1px solid #e2e2e2;
+          font-size: 14px;
+          &:last-child {
+            border-right: 1px solid #e2e2e2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.org__content {
+  display: block;
+  width: 970px;
+  padding: 20px;
+  margin: auto;
+  .org__inner-content {
+    @include simple-flex;
+    .org__main {
+      @include simple-flex;
+      width: 640px;
+    }
+    .org__sidebar {
+      width: 300px;
+      padding-left: 20px;
+    }
+  }
+}
+
+.org__footer {
+  .copyright {
+    display: block;
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #585858;
+  }
+}
