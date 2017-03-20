@@ -1,5 +1,9 @@
 = form_for @simulation do |f|
+  | 通信回線
   = f.select :carrier, Simulation.carriers.map { |k, _| [k, k] }
+  br
+  | お使いの端末
+  = f.select :terminal_id, [['指定しない', nil]] + Terminal.pluck(:name, :id)
   br
   | 通信量
   = f.text_field :capacity

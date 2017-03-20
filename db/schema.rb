@@ -87,13 +87,15 @@ ActiveRecord::Schema.define(version: 20170323000000) do
   end
 
   create_table "simulations", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.integer  "carrier",    null: false
-    t.integer  "capacity",   null: false
-    t.boolean  "voice",      null: false
-    t.boolean  "sms",        null: false
-    t.integer  "speed",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "carrier",     null: false
+    t.integer  "terminal_id"
+    t.integer  "capacity",    null: false
+    t.boolean  "voice",       null: false
+    t.boolean  "sms",         null: false
+    t.integer  "speed",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["terminal_id"], name: "index_simulations_on_terminal_id", using: :btree
   end
 
   create_table "terminals", force: :cascade do |t|
