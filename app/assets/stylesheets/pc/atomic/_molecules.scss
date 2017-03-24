@@ -3,11 +3,11 @@
 
 // header アイキャッチ部分
 .org__eyecatch {
-  min-height: 300px;
+  min-height: 280px;
   width: 100%;
   @include gradient(#79B8FC, #6C94FF, horizontal);
   .mol__description {
-    padding: 40px 0;
+    padding: 10px 0 30px;
     text-align: center;
     h1.caption {
       margin-bottom: 20px;
