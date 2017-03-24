@@ -3,13 +3,17 @@
 
 .a__logo {
   background-image: asset-data-url('logo.svg');
-  width: 126px;
-  height: 37px;
+  width: 132px;
+  height: 40px;
   background-size: cover;
   display: inline-block;
   &:hover {
     opacity: 0.8;
   }
+}
+
+a.a__logo-link {
+  height: 40px;
 }
 
 a.a__button {
