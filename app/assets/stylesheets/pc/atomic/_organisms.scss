@@ -1,0 +1,121 @@
+// atomic design
+// morganisms
+
+// header menu の css
+.org__header {
+  border-bottom: 4px solid #3C7CD6;
+  background: white;
+  .mol__global-header {
+    width: 970px;
+    margin: auto;
+    padding: 10px 0;
+    @include simple-flex();
+    @include justify(space-between);
+
+    nav.header-nav {
+      display: inline-block;
+      .a__header-logo {
+        display: inline-block;
+        height: 40px;
+      }
+      ul.nav-lists {
+        li {
+          display: table-cell;
+          vertical-align: middle;
+          box-sizing: border-box;
+          height: 40px;
+          padding: 0 18px;
+          border-left: 1px solid #e2e2e2;
+          font-size: 14px;
+          &:last-child {
+            border-right: 1px solid #e2e2e2;
+          }
+        }
+      }
+    }
+  }
+}
+
+.org__content {
+  display: block;
+  width: 970px;
+  padding: 60px 20px;
+  margin: auto;
+  .org__inner-content {
+    @include simple-flex;
+    .org__main {
+      @include simple-flex;
+      width: 640px;
+    }
+    .org__sidebar {
+      width: 300px;
+      padding-left: 20px;
+    }
+  }
+}
+
+.org__footer {
+  background: white;
+  .org__inner-footer {
+    width: 970px;
+    padding: 40px 20px 60px;
+    margin: auto;
+    @include simple-flex;
+    .mol__content {
+      width : 640px;
+      .mol__wraper {
+        padding-bottom: 30px;
+        line-height: 1.3;
+        .a__caption {
+          font-weight: bold;
+        }
+        a.span {
+          padding-right: 20px;
+          font-size: 14px;
+          color: $basic-content-text;
+          &:before {
+            position: relative;
+            @include fa("\f054");
+            color: #969292;
+            padding-right: 4px
+          }
+        }
+      }
+    }
+    .mol__opinion {
+      background: $content-bg;
+      @include border-radius(4px);
+      border: 1px solid #efefef;
+      .a__inner {
+        padding: 20px 24px;
+        span.caption {
+          padding-bottom: 8px;
+          display: inline-block;
+          text-align: center;
+          font-size: 11px;
+        }
+        form {
+          textarea {
+            resize: vertical;
+            width: 100%;
+            box-sizing: border-box;
+            height: 160px;
+            border: 1px solid #efefef;
+            border-radius: 4px;
+            @include box-shadow(1px, 1px, 4px, #e6e6e6, inset);
+          }
+        }
+      }
+    }
+  }
+}
+
+.a__copyright {
+  width: 970px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  color: #585858;
+  padding-bottom: 20px;
+}

@@ -1,44 +1,88 @@
 // atomic design
 // molecules
 
-// header menu の css
-header {
-  border-bottom: 4px solid #3C7CD6;
-  .mol__global-header {
-    width: 970px;
-    margin: auto;
-    padding: 5px 0;
-    @include simple-flex();
-    @include justify(space-between);
-
-    nav.header-nav {
-      display: inline-block;
-      .a__header-logo {
-        display: inline-block;
-        height: 40px;
+// header アイキャッチ部分
+.org__eyecatch {
+  min-height: 280px;
+  width: 100%;
+  @include gradient(#79B8FC, #6C94FF, horizontal);
+  .mol__description {
+    padding: 10px 0 30px;
+    text-align: center;
+    h1.caption {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: white;
+      font-weight: bold;
+      text-align: center; // justify を無効にする
+      &:first-letter {
+        font-size: 40px;
       }
-      ul.nav-lists {
-        li {
-          display: table-cell;
-          vertical-align: middle;
-          box-sizing: border-box;
-          height: 40px;
-          padding: 0 18px;
-          border-left: 1px solid #e2e2e2;
-          &:last-child {
-            border-right: 1px solid #e2e2e2;
-          }
-        }
-      }
+    }
+    p {
+      color: white;
+      margin-bottom: 20px;
     }
   }
 }
 
-footer {
-  .copyright {
+// カテゴリ別Q&A一覧
+.mol__qa-pannel {
+  padding-right: 20px;
+  margin-bottom: 60px;
+  h2 {
+    padding-bottom: 6px;
+  }
+  a.mol__qa-tile {
     display: block;
-    text-align: center;
-    font-size: 14px;
-    color: #585858;
+    box-sizing: border-box;
+    width: 310px;
+    background: white;
+    padding: 16px 20px;
+    border: 1px solid $basic-frame;
+    border-bottom: none;
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+    &:first-child {
+      @include border-top-left-radius(4px);
+      @include border-top-right-radius(4px);
+    }
+    &:last-child {
+      @include border-bottom-left-radius(4px);
+      @include border-bottom-right-radius(4px);
+      border-bottom: 1px solid $basic-frame;
+    }
+    .mol__caption {
+      display: block;
+      p.caption {
+        padding-bottom: 10px;
+      }
+    }
+    .mol__data {
+      @include simple-flex;
+      @include justify(space-around);
+      padding-top: 10px;
+      .a__item-data {
+        display: inline-block;
+        span.caption {
+          display: block;
+          text-align: center;
+          color : $basic-link;
+        }
+        .a__data {
+          box-sizing: border-box;
+          min-width: 60px;
+          @include border-radius(4px);
+          margin-top: 4px;
+          padding: 6px 14px;
+          border: 1px solid $basic-link;
+          color : $basic-link;
+          text-align: center;
+        }
+      }
+    }
   }
 }

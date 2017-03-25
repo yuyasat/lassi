@@ -182,14 +182,6 @@
   }
 }
 
-@mixin marker($color) {
-  padding: 0 3px 1px 2px;
-  background-image: -webkit-linear-gradient(6deg, $color, $color 25%, transparent 25.1%, transparent);
-  background-image: -moz-linear-gradient(6deg, $color, $color 25%, transparent 25.1%, transparent);
-  background-image: -o-linear-gradient(6deg, $color, $color 25%, transparent 25.1%, transparent);
-  background-image: linear-gradient(6deg, $color, $color 25%, transparent 25.1%, transparent);
-}
-
 @mixin animation($duration,$name) {
   animation-duration: $duration;
   animation-name: $name;
@@ -204,4 +196,80 @@
   $rem-size: round(($size / $base-size) * 100);
   $rem-size: $rem-size / 100;
   font-size: #{$rem-size}rem;
+}
+
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+    @if $orientation == vertical {
+    // vertical
+    background: -webkit-linear-gradient($start-color 0%, $end-color 100%);
+    background: -o-linear-gradient($start-color 0%, $end-color 100%);
+    background: linear-gradient($start-color 0%, $end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=0 );
+  } @else if $orientation == horizontal {
+    // horizontal
+    background: -moz-linear-gradient(left,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-linear-gradient(left,  $start-color 0%,$end-color 100%);
+    background: -o-linear-gradient(left,  $start-color 0%,$end-color 100%);
+    background: -ms-linear-gradient(left,  $start-color 0%,$end-color 100%);
+    background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+  } @else {
+    // radial
+    background: -moz-radial-gradient(center, ellipse cover,  $start-color 0%, $end-color 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$start-color), color-stop(100%,$end-color));
+    background: -webkit-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+    background: -o-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+    background: -ms-radial-gradient(center, ellipse cover,  $start-color 0%,$end-color 100%);
+    background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start-color', endColorstr='$end-color',GradientType=1 );
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
+      -moz-border-radius-topleft: $radius;
+          border-top-left-radius: $radius;
+}
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+      -moz-border-radius-topright: $radius;
+          border-top-right-radius: $radius;
+}
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+      -moz-border-radius-bottomright: $radius;
+          border-bottom-right-radius: $radius;
+}
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+      -moz-border-radius-bottomleft: $radius;
+          border-bottom-left-radius: $radius;
+}
+
+@mixin hover-opacity($duration,$opacity) {
+  @include transition-property(opacity);
+  @include transition-duration(#{$duration});
+  &:hover {
+    opacity: $opacity;
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
 }
