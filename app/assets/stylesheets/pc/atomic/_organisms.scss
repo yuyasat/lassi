@@ -58,7 +58,7 @@
   background: white;
   .org__inner-footer {
     width: 970px;
-    padding: 60px 20px;
+    padding: 40px 20px 60px;
     margin: auto;
     @include simple-flex;
     .mol__content {
@@ -83,13 +83,39 @@
       }
     }
     .mol__opinion {
-
-    }
-    .copyright {
-      display: block;
-      text-align: left;
-      font-size: 14px;
-      color: #585858;
+      background: $content-bg;
+      @include border-radius(4px);
+      border: 1px solid #efefef;
+      .a__inner {
+        padding: 20px 24px;
+        span.caption {
+          padding-bottom: 8px;
+          display: inline-block;
+          text-align: center;
+          font-size: 11px;
+        }
+        form {
+          textarea {
+            resize: vertical;
+            width: 100%;
+            box-sizing: border-box;
+            height: 160px;
+            border: 1px solid #efefef;
+            border-radius: 4px;
+            @include box-shadow(1px, 1px, 4px, #e6e6e6, inset);
+          }
+        }
+      }
     }
   }
+}
+
+.a__copyright {
+  width: 970px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  color: #585858;
+  padding-bottom: 20px;
 }

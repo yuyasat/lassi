@@ -35,3 +35,30 @@ h2 {
   color: #6A6A6A;
   font-size: 21px;
 }
+
+.a__read-more {
+  padding-top: 16px;
+  display: block;
+  text-align: right;
+}
+
+// form 系 css
+
+.mol__submit-wraper {
+  padding-top: 4px;
+  input {
+    &.a__button-basic {
+      display: block;
+      margin: auto;
+      padding: 8px 20px;
+      font-size: 14px;
+      border: 1px solid $basic-frame;
+      @include border-radius(3px);
+      @include gradient(#ffffff, #F1F1F1, vertical);
+      &:hover {
+        cursor: pointer;
+        @include gradient(#f7f7f7, #e4e4e4, vertical);
+      }
+    }
+  }
+}
