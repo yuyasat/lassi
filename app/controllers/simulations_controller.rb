@@ -17,6 +17,6 @@ class SimulationsController < ApplicationController
   private
 
   def simulation_params
-    params.require(:simulation).permit(:carrier, :capacity, :voice, :sms, :speed)
+    params.require(:simulation).permit(:carrier, :terminal_id, :capacity, :voice, :sms, :speed)
   end
 end
