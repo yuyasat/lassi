@@ -106,12 +106,13 @@
             padding: 8px;
           }
           .a__submit-thanks {
+            box-sizing: border-box;
             width: 250px;
             height: 160px;
             padding: 20px 10px 10px;
+            margin-bottom: 10px;
             background: white;
             border: 1px solid #efefef;
-            box-sizing: border-box;
             @include border-radius(4px);
             .a__caption {
               font-size: 14px;
