@@ -16,8 +16,8 @@
       .a__inner
         span.caption 本サービスへのご意見・ご要望をお聞かせください
         form action="footer-opinion" method="post"
-          textarea [data-goiken-is-submit=false]
-          /.a__submit-thanks  [data-goiken-is-submit=true] /*TODO submit されたら、textarea を非表示にして、.a__dubmit-thanks 以下を表示する*/
+          textarea data-goiken-is-submit="false"
+          /.a__submit-thanks data-goiken-is-submit="true" /*TODO submit されたら、textarea を非表示にして、.a__dubmit-thanks以下を表示する*/
             .a__caption ご意見は送信されました
             .a__description
               |  いただいた意見は<br>必ずスタッフが目を通します。<br>サービス改善のための<br>参考にさせていただきます。
