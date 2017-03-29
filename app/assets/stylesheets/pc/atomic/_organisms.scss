@@ -103,6 +103,7 @@
             border: 1px solid #efefef;
             border-radius: 4px;
             @include box-shadow(1px, 1px, 4px, #e6e6e6, inset);
+            padding: 8px;
           }
         }
       }
