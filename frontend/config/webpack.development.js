@@ -4,7 +4,7 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: {
     application: './src/javascripts/application.js',
-    footerOpinion: './src/javascripts/opinion',
+    footerOpinion: './src/javascripts/Opinion',
   },
   output: {
     path: '../app/assets/javascripts',
