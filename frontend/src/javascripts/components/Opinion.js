@@ -22,14 +22,14 @@ export default Vue.extend({
   data: function () {
     return {
       sent: false,
-      opinionText: '',
+      opinionText: ''
     }
   },
   methods: {
     submitOpinion: function (e) {
       // ここにrails側にpostする処理を書く
       this.sent = true
-      return e.preventDefault();
+      return e.preventDefault()
     }
-  },
+  }
 })
