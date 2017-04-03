@@ -11,14 +11,13 @@
       .mol__wraper
         .a__caption その他
         a.span 初めての方へ
-        a.span マイページ 
+        a.span マイページ
     .mol__opinion
       .a__inner
         span.caption 本サービスへのご意見・ご要望をお聞かせください
         form action="footer-opinion" method="post"
-          textarea
-          .mol__submit-wraper
-            input.a__button-basic type="submit" name="commit" value="運営者にご意見を送る"
+        #vue-footer-opinion
+        = javascript_include_tag 'footerOpinion'
   .a__copyright
     | Copyright © 2017 lassi All Rights Reserved.&nbsp;
     = link_to 'GitHub', 'https://github.com/yuyasat/lassi'

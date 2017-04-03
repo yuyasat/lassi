@@ -23,6 +23,7 @@ a.a__button {
   border: 2px solid white;
   @include border-radius(10px);
   font-weight: bold;
+  line-height: 1;
   color: white;
   text-decoration: none;
   // @include transition(all,0.3s); TODO 何故か通らない

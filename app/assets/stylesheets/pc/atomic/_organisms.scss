@@ -103,6 +103,27 @@
             border: 1px solid #efefef;
             border-radius: 4px;
             @include box-shadow(1px, 1px, 4px, #e6e6e6, inset);
+            padding: 8px;
+          }
+          .a__submit-thanks {
+            box-sizing: border-box;
+            min-width: 250px;
+            height: 160px;
+            padding: 20px 10px 10px;
+            margin-bottom: 10px;
+            background: white;
+            border: 1px solid #efefef;
+            @include border-radius(4px);
+            .a__caption {
+              font-size: 14px;
+              font-weight: bold;
+              text-align: center;
+              margin-bottom: 10px;
+            }
+            .a__description {
+              font-size: 12px;
+              text-align: center;
+            }
           }
         }
       }
