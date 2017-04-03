@@ -4,6 +4,7 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: {
     application: './src/javascripts/application.js',
+    footerOpinion: './src/javascripts/Opinion',
   },
   output: {
     path: '../app/assets/javascripts',
@@ -20,6 +21,10 @@ module.exports = {
         loader: 'babel?presets[]=es2015,presets[]=stage-2'
       },
       {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+      {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
       },
@@ -29,5 +34,10 @@ module.exports = {
         loader: 'url-loader?mimetype=application/font-woff'
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.common.js',
+    }
   }
 }
