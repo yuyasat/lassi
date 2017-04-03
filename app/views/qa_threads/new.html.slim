@@ -1,29 +1,33 @@
-div
-  h2
-    | 掲示板に質問してみよう！
-  div
-    | ディスクリプションディスクリプション
-  div
-    = link_to '投稿に関する質問はこちら', '/'
-.clearfix
-  = form_for(@qa_thread, url: { action: :confirm }) do |f|
-    .qa_thread-main
-      div
-        = label :qa_thread, :title, 'タイトル'
-        = f.text_field :title
-      div
-        = label :qa_thread, :carrier, 'キャリア'
-        = f.select :carrier, QaThread.carriers_i18n.invert
-      div
-        = label :qa_thread, :terminal, '端末'
-        = f.text_field :terminal
-      div
-        = label :qa_thread, :content, '本文'
-        = f.text_area :content, size: "60x10"
-      div
-        = f.submit '次に進む'
-    .qa_thread-sidebar
-      div
-        | このカテゴリの質問
-      div
-        | あいうえお
+.org__content
+  .a__breadcrumb
+  ol itemtype="http://schema.org/BreadcrumbList"
+    li.item itemprop="itemListElement"
+      strong.a__breadcrumb_now itemprop="name" 電力会社一覧
+  .mol__eyecatch
+    h2 掲示板に質問してみよう！
+    p.description
+      | スマホ・格安SIMの疑問をみんなに聞いてみよう
+    div
+      = link_to '投稿に関する質問はこちら', '/'
+  .clearfix
+    = form_for(@qa_thread, url: { action: :confirm }) do |f|
+      .qa_thread-main
+        div
+          = label :qa_thread, :title, 'タイトル'
+          = f.text_field :title
+        div
+          = label :qa_thread, :carrier, 'キャリア'
+          = f.select :carrier, QaThread.carriers_i18n.invert
+        div
+          = label :qa_thread, :terminal, '端末'
+          = f.text_field :terminal
+        div
+          = label :qa_thread, :content, '本文'
+          = f.text_area :content, size: "60x10"
+        div
+          = f.submit '次に進む'
+      .qa_thread-sidebar
+        div
+          | このカテゴリの質問
+        div
+          | あいうえお
