@@ -4,6 +4,8 @@ class CreateOpinions < ActiveRecord::Migration[5.0]
       t.text   :content,      null: false
       t.string :ip,           null: false
       t.string :user_agent,   null: false
+
+      t.timestamps
     end
   end
 end

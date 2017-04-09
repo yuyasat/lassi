@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(version: 20170407000000) do
   end
 
   create_table "opinions", force: :cascade do |t|
-    t.text   "content",    null: false
-    t.string "ip",         null: false
-    t.string "user_agent", null: false
+    t.text     "content",    null: false
+    t.string   "ip",         null: false
+    t.string   "user_agent", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plans", force: :cascade do |t|
