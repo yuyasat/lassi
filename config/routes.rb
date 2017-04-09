@@ -6,9 +6,23 @@ Rails.application.routes.draw do
     post 'confirm', on: :collection
   end
   resources :qa_replies
-  resources :simulations, path: 'simulate' do
+  resources :simulations, path: 'simulate', only: %i(create) do
     get 'input', on: :collection
     get 'result/:uuid' => 'simulations#result', on: :collection, as: 'result'
+  end
+
+  namespace :admin do
+    resources :opinions, only: %i(index)
+  end
+
+  namespace :private do
+    namespace :api do
+      namespace :v1 do
+        resources :opinions do
+          post "create"
+        end
+      end
+    end
   end
 
   get '/404' => 'errors#render_404'
