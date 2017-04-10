@@ -61,3 +61,15 @@
     }
   }
 }
+
+// 投稿 ui のアイキャッチ
+.mol__eyecatch {
+  @include border-radius(4px);
+  width: 100%;
+  min-height: 250pd;
+  padding: 20px;
+  @include gradient(#79B8FC, #6C94FF, horizontal);
+  h2 {
+    color: white;
+  }
+}

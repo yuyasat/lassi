@@ -43,6 +43,25 @@ h2 {
   text-align: right;
 }
 
+.a__breadcrumb {
+  ol {
+    li {
+      display: inline-block;
+      font-size: 12px;
+      &:after {
+        margin-left: 10px;
+        margin-right: 10px;
+        @include fa("\f105");
+      }
+      &:last-child	{
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
 // form 系 css
 
 .mol__submit-wraper {
