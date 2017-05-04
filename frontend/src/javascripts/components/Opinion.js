@@ -3,7 +3,7 @@ import axios from 'axios'
 import $ from 'jquery'
 
 const sentContent = `
-  <div class="a__submit-thanks" v-if="sent && !errorFlag">
+  <div class="a__submit-thanks a__plate" v-if="sent && !errorFlag">
     <div class="a__caption">ご意見は送信されました</div>
     <div class="a__description">
       いただいた意見は<br>必ずスタッフが目を通します。<br>
@@ -23,11 +23,11 @@ const errorContent = `
 export default Vue.extend({
   template: `
     <form>
-      <textarea v-model="opinionText" v-if="!sent"></textarea>
+      <textarea v-model="opinionText" v-if="!sent" class="a__plate"></textarea>
       ${sentContent}
       ${errorContent}
       <div class="mol__submit-wraper">
-        <input
+        <input type="button"
           v-on:click="submitOpinion"
           class="a__button-basic"
           value="運営者にご意見を送る">

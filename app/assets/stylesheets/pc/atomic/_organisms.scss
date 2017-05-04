@@ -1,5 +1,5 @@
 // atomic design
-// morganisms
+// organisms
 
 // header menu の css
 .org__header {
@@ -41,6 +41,7 @@
   width: 970px;
   padding: 60px 20px;
   margin: auto;
+  text-align: left;
   .org__inner-content {
     @include simple-flex;
     .org__main {
@@ -54,6 +55,56 @@
   }
 }
 
+// パンくずリスト部分
+.org__breadcrumb {
+  display: block;
+  width: 970px;
+  margin: auto;
+}
+
+// header top アイキャッチ部分
+.org__global-eyecatch {
+  min-height: 280px;
+  width: 100%;
+  @include gradient(#79B8FC, #6C94FF, horizontal);
+  .mol__description {
+    padding: 40px 0 60px;
+    text-align: center;
+    h1.caption {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: white;
+      font-weight: bold;
+      text-align: center; // justify を無効にする
+      &:first-letter {
+        font-size: 50px;
+      }
+    }
+    p {
+      color: white;
+      margin-bottom: 20px;
+    }
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.org__attention-eyecatch {
+  display: block;
+  width: 970px;
+  padding: 60px 20px 20px;
+  margin: auto;
+  text-align: center;
+  h2 {
+    text-align: center;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
 .org__footer {
   background: white;
   .org__inner-footer {
@@ -62,7 +113,7 @@
     margin: auto;
     @include simple-flex;
     .mol__content {
-      width : 640px;
+      width : 670px;
       .mol__wraper {
         padding-bottom: 30px;
         line-height: 1.3;
@@ -86,13 +137,16 @@
       background: $content-bg;
       @include border-radius(4px);
       border: 1px solid #efefef;
+      width: 310px;
+      box-sizing: border-box;
       .a__inner {
         padding: 20px 24px;
         span.caption {
           padding-bottom: 8px;
           display: inline-block;
           text-align: center;
-          font-size: 11px;
+          font-size: 12px;
+          display: block;
         }
         form {
           textarea {
@@ -104,6 +158,12 @@
             border-radius: 4px;
             @include box-shadow(1px, 1px, 4px, #e6e6e6, inset);
             padding: 8px;
+            &:hover {
+              background: white;
+            }
+            &:focus {
+              box-shadow:inset 0 0 10px #4c7fff;
+            }
           }
           .a__submit-thanks {
             box-sizing: border-box;
@@ -131,6 +191,7 @@
   }
 }
 
+// organisms 要素が強いため、本ファイルに記入する
 .a__copyright {
   width: 970px;
   display: block;

@@ -1,0 +1,35 @@
+// qa thread 関係の css
+.mol__qa-thread-main {
+  padding-right: 60px;
+}
+
+.mol__qa-content {
+  @include simple-flex();
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.org__qa-thread-sidebar {
+  h2 {
+    font-size: 16px;
+  }
+}
+
+.org__content {
+  .mol__eyecatch {
+    margin-top: 40px;
+    text-align: center;
+  }
+  &.mm--confirm {
+    width: 600px;
+    padding-top: 60px;
+  }
+  &.mm--new {
+    padding-top: 10px;
+  }
+}
+
+// confirm 周り
+.a__confirm-content {
+  border-bottom: 1px solid #c1c1c1;
+}

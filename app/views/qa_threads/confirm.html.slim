@@ -1,30 +1,38 @@
-div
-  h2
-    | 掲示板に質問してみよう！
-  div
-    | ディスクリプションディスクリプション
-  div
-    = link_to '投稿に関する質問はこちら', '/'
-.clearfix
+.org__attention-eyecatch
+  .mol__eyecatch
+    h2 投稿前にご確認ください
+    p.description
+      | 下記の内容で投稿します。よろしいですか？
+.org__breadcrumb
+  .a__breadcrumb
+    ol itemtype="http://schema.org/BreadcrumbList"
+      li itemprop="itemListElement" itemtype="http://schema.org/ListItem"
+        a href="/" title="トップ" itemprop="url"
+          span itemprop="title"
+            | トップ
+      li itemprop="itemListElement"
+        .a__breadcrumb_now itemprop="name" 質問を作成する
+.org__content.mm--confirm
   = form_for(@qa_thread) do |f|
     .qa_thread-main
-      div
-        = label :qa_thread, :title, 'タイトル'
-        = @qa_thread.title
-      div
-        = label :qa_thread, :carrier, 'キャリア'
-        = @qa_thread.carrier
-      div
-        = label :qa_thread, :terminal, '端末'
-        = @qa_thread.terminal
-      div
-        = label :qa_thread, :content, '本文'
-        = @qa_thread.content
-      div
-        = link_to '編集し直す', new_qa_thread_path
-        = f.submit '次に進む'
-    .qa_thread-sidebar
-      div
-        | このカテゴリの質問
-      div
-        | あいうえお
+      .mol__form
+        = label :qa_thread, :title, 'タイトル', class:"a__plate a__required"
+        .a__confirm-content
+          = @qa_thread.title
+      .mol__form
+        = label :qa_thread, :carrier, 'キャリア', class:"a__plate"
+        .a__confirm-content
+          = @qa_thread.carrier
+      .mol__form
+        = label :qa_thread, :terminal, '端末', class:"a__plate"
+        .a__confirm-content
+          = @qa_thread.terminal
+      .mol__form
+        = label :qa_thread, :content, '本文', class:"a__plate a__required"
+        .a__confirm-content
+          = @qa_thread.content
+      .mol__form.mm__back-next
+        = link_to '編集し直す', new_qa_thread_path, class:'a__button-basic'
+        .mol__button
+          = f.submit '投稿を完了する', class: 'a__button'
+          span.a__caution 投稿した内容は1時間の間編集することができます

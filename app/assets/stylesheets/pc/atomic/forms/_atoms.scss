@@ -1,0 +1,153 @@
+// css for forms
+
+input, button, textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  @include transition(all,0.3s);
+  &.a__plate {
+    width: 600px;
+    background: white;
+    padding: 14px;
+    font-size: 18px;
+    color: $basic-content-text;
+    border: 5px solid #D8D8D8;
+    @include border-radius(4px);
+  }
+  &::-webkit-input-placeholder {
+    color: #bbb;
+    font-weight: normal;
+  }
+  &::-moz-placeholder {
+    color: #bbb;
+    font-weight: normal;
+  }
+  &:-ms-input-placeholder {
+    color: #bbb;
+    font-weight: normal;
+  }
+  &:hover {
+  box-shadow:inset 0 0 7px #ffc500;
+  background: #fff6d9;
+  }
+}
+
+// select のスタイル
+.mol__form {
+  span.a__select {
+    position: relative;
+    select.a__plate {
+      padding-left: 60px;
+    }
+    &:before {
+      display: inline-block;
+      position: absolute;
+      top: 6px;
+      left: 34px;
+      @include fa("\f04b");
+      color: #94B1FA;
+      width: 10px;
+      height: 10px;
+      @include rotate(90deg);
+      @include transition(all,0.3s);
+    }
+    &:hover {
+      &:before {
+        top: 10px;
+      }
+    }
+  }
+}
+
+// textarea のスタイル
+textarea {
+  resize: vertical;
+}
+
+input:focus,textarea:focus,  {
+  box-shadow:inset 0 0 10px #4c7fff;
+}
+
+input[type="text"] {
+  property: value;
+}
+
+/* input type="password" のみ */
+input[type="password"] {
+  property: value;
+}
+
+/* input type="radio" のみ */
+input[type="radio"] {
+  property: value;
+}
+
+/* input type="checkbox" のみ */
+input[type="checkbox"] {
+  property: value;
+}
+
+/* input type="reset" のみ */
+input[type="reset"] {
+  property: value;
+}
+
+/* input type="submit" のみ */
+input[type="submit"] {
+  property: value;
+}
+
+// label
+label {
+  &.a__plate {
+    display: block;
+    padding-bottom: 4px;
+  font-weight: bold;
+  font-size: 20px;
+  }
+  &.a__required {
+    position: relative;
+    padding-left: 48px;
+    &:before {
+      content: "必 須";
+      position: absolute;
+      background: #FF7989;
+      padding: 4px 8px 2px;
+      color: white;
+      @include border-radius(4px);
+      margin-right: 6px;
+      font-size: 11px;
+      font-weight: bold;
+      left: 0;
+      top: 2px;
+    }
+  }
+}
+
+// input submit
+input[type="submit"] {
+  &.a__button {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px 100px;
+    display: block;
+    margin: auto;
+    &:hover {
+      cursor: pointer;
+      background: #ffb600;
+    }
+  }
+}

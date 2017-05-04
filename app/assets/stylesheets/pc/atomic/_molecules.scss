@@ -1,31 +1,6 @@
 // atomic design
 // molecules
 
-// header アイキャッチ部分
-.org__eyecatch {
-  min-height: 280px;
-  width: 100%;
-  @include gradient(#79B8FC, #6C94FF, horizontal);
-  .mol__description {
-    padding: 10px 0 30px;
-    text-align: center;
-    h1.caption {
-      margin-bottom: 20px;
-      font-size: 22px;
-      color: white;
-      font-weight: bold;
-      text-align: center; // justify を無効にする
-      &:first-letter {
-        font-size: 40px;
-      }
-    }
-    p {
-      color: white;
-      margin-bottom: 20px;
-    }
-  }
-}
-
 // カテゴリ別Q&A一覧
 .mol__qa-pannel {
   padding-right: 20px;
@@ -84,5 +59,21 @@
         }
       }
     }
+  }
+}
+
+// 投稿 ui のアイキャッチ
+.mol__eyecatch {
+  box-sizing: border-box;
+  @include border-radius(4px);
+  width: 100%;
+  padding: 40px 80px;
+  @include gradient(#79B8FC, #6C94FF, horizontal);
+  color: white;
+  h2 {
+    &:first-letter{
+      font-size: 50px;
+    }
+    color: white;
   }
 }

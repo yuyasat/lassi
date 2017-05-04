@@ -25,4 +25,10 @@ $experimental-support-for-svg: true;
   'common/mixin',
   'pc/atomic/atoms',
   'pc/atomic/molecules',
-  'pc/atomic/organisms';
+  'pc/atomic/organisms',
+  'pc/atomic/forms/atoms',
+  'pc/atomic/forms/molecules',
+  'pc/atomic/forms/organisms';
+
+@import
+  'pc/pages/*';
