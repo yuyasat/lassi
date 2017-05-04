@@ -1,4 +1,14 @@
-.org__content
+.org__global-eyecatch
+  .mol__description
+    h1.caption
+      | 掲示板に質問してみよう！
+    p
+      | 自分にとってぴったりの格安SIMはなに？みんなどんな工夫をして使っている？<br>
+      | 格安スマホに切り替えた決めては何だった？
+      | スマホの気になることをみんなに聞いてみよう。
+    div
+      = link_to '投稿に関する質問はこちら', '/'
+.org__breadcrumb
   .a__breadcrumb
     ol itemtype="http://schema.org/BreadcrumbList"
       li itemprop="itemListElement" itemtype="http://schema.org/ListItem"
@@ -7,31 +17,82 @@
             | トップ
       li itemprop="itemListElement"
         .a__breadcrumb_now itemprop="name" 質問を作成する
-  .mol__eyecatch
-    h2 掲示板に質問してみよう！
-    p.description
-      | スマホ・格安SIMの疑問をみんなに聞いてみよう
-    div
-      = link_to '投稿に関する質問はこちら', '/'
-  .clearfix
+.org__content
+  // 今は使わない
+    .mol__eyecatch
+      h2 掲示板に質問してみよう！
+      p.description
+        | スマホ・格安SIMの疑問をみんなに聞いてみよう
+      div
+        = link_to '投稿に関する質問はこちら', '/'
+  .mol__qa-content
     = form_for(@qa_thread, url: { action: :confirm }) do |f|
-      .qa_thread-main
-        div
-          = label :qa_thread, :title, 'タイトル'
-          = f.text_field :title
-        div
-          = label :qa_thread, :carrier, 'キャリア'
-          = f.select :carrier, QaThread.carriers_i18n.invert
-        div
-          = label :qa_thread, :terminal, '端末'
-          = f.text_field :terminal
-        div
-          = label :qa_thread, :content, '本文'
-          = f.text_area :content, size: "60x10"
-        div
-          = f.submit '次に進む'
-      .qa_thread-sidebar
-        div
-          | このカテゴリの質問
-        div
-          | あいうえお
+      .mol__qa-thread-main
+        .mol__form
+          = label :qa_thread, :title, '質問のタイトル', class: 'a__plate a__required'
+          = f.text_field :title, placeholder:'質問のタイトルをお書きください', class: 'a__plate'
+        .mol__form
+          = label :qa_thread, :carrier, 'ご自身が使っている通信キャリア', class: 'a__plate'
+          span
+            = f.select :carrier, QaThread.carriers_i18n.invert, {}, {class:'a__plate'}
+            // デフォルトの項目は "書きよりお選びください"
+        // 一旦除く
+          div
+            = label :qa_thread, :terminal, '端末'
+            = f.text_field :terminal
+        // 質問が集まってきたらラベル項目を設ける
+          div
+            = label :qa_thread, :terminal, 'ラベル'
+            = f.text_field :terminal
+        .mol__form
+          = label :qa_thread, :content, '本文', class: 'a__plate a__required'
+          = f.text_area :content, size: "60x10", placeholder:'わからないこと、解決したいことをお書きください', class:'a__plate'
+        .mol__button
+          = f.submit '次に進む', class: 'a__button'
+    .org__qa-thread-sidebar
+      .mol__qa-pannel
+        h2 よくある質問
+        .mol__wrapper
+          a.mol__qa-tile
+            .mol__caption
+              p.caption
+                | 現在ソフトバンクのiPhone6を使っているのですが、オススメの格安 SIM があれば教えてください。
+            .mol__data
+              .a__item-data
+                span.caption 回答者
+                .a__data 1
+              .a__item-data
+                span.caption 閲覧数
+                .a__data 76
+              .a__item-data
+                span.caption 気になる
+                .a__data 10
+          a.mol__qa-tile
+            .mol__caption
+              p.caption
+                | 現在ソフトバンクのiPhone6を使っているのですが、オススメの格安 SIM があれば教えてください。
+            .mol__data
+              .a__item-data
+                span.caption 回答者
+                .a__data 1
+              .a__item-data
+                span.caption 閲覧数
+                .a__data 76
+              .a__item-data
+                span.caption 気になる
+                .a__data 10
+          a.mol__qa-tile
+            .mol__caption
+              p.caption
+                | 現在ソフトバンクのiPhone6を使っているのですが、オススメの格安 SIM があれば教えてください。
+            .mol__data
+              .a__item-data
+                span.caption 回答者
+                .a__data 1
+              .a__item-data
+                span.caption 閲覧数
+                .a__data 76
+              .a__item-data
+                span.caption 気になる
+                .a__data 10
+        a.a__read-more href='/' title='続きを見る...' 続きを見る...

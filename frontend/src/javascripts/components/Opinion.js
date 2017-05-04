@@ -3,7 +3,7 @@ import Vue from 'vue'
 export default Vue.extend({
   template: `
     <form>
-      <textarea v-model="opinionText" v-if="!sent"></textarea>
+      <textarea v-model="opinionText" v-if="!sent" class="a__plate"></textarea>
       <div class="a__submit-thanks" v-if="sent">
         <div class="a__caption">ご意見は送信されました</div>
         <div class="a__description">

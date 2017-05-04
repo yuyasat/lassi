@@ -1,0 +1,16 @@
+// qa thread 関係の css
+.mol__qa-thread-main {
+  padding-right: 60px;
+}
+
+.mol__qa-content {
+  @include simple-flex();
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.org__qa-thread-sidebar {
+  h2 {
+    font-size: 16px;
+  }
+}

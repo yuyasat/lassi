@@ -16,7 +16,7 @@ a.a__logo-link {
   height: 40px;
 }
 
-a.a__button {
+a.a__button, .a__button{
   display: inline-block;
   background-color: $main-color;
   padding: 20px 30px;
@@ -26,7 +26,7 @@ a.a__button {
   line-height: 1;
   color: white;
   text-decoration: none;
-  // @include transition(all,0.3s); TODO 何故か通らない
+  @include transition(all,0.3s);
   &:hover {
     background-color: #ffbb22;
   }
@@ -76,6 +76,7 @@ h2 {
       @include border-radius(3px);
       @include gradient(#ffffff, #F1F1F1, vertical);
       &:hover {
+        box-shadow: none;
         cursor: pointer;
         @include gradient(#f7f7f7, #e4e4e4, vertical);
       }

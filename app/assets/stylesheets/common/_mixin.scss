@@ -254,14 +254,6 @@
           border-bottom-left-radius: $radius;
 }
 
-@mixin hover-opacity($duration,$opacity) {
-  @include transition-property(opacity);
-  @include transition-duration(#{$duration});
-  &:hover {
-    opacity: $opacity;
-  }
-}
-
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
     -webkit-box-shadow:inset $top $left $blur $color;
@@ -272,4 +264,28 @@
     -moz-box-shadow: $top $left $blur $color;
     box-shadow: $top $left $blur $color;
   }
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+@mixin transition-method($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+@mixin transition($transition-property, $transition-time) {
+	-webkit-transition: $transition-property $transition-time;
+	-moz-transition: $transition-property $transition-time;
+	-ms-transition: $transition-property $transition-time;
+	-o-transition: $transition-property $transition-time;
+	transition: $transition-property $transition-time;
 }

@@ -39,7 +39,7 @@
 .org__content {
   display: block;
   width: 970px;
-  padding: 60px 20px;
+  padding: 20px 20px 60px;
   margin: auto;
   .org__inner-content {
     @include simple-flex;
@@ -54,28 +54,39 @@
   }
 }
 
+// パンくずリスト部分
+.org__breadcrumb {
+  display: block;
+  width: 970px;
+  margin: auto;
+}
+
 // header top アイキャッチ部分
 .org__global-eyecatch {
   min-height: 280px;
   width: 100%;
   @include gradient(#79B8FC, #6C94FF, horizontal);
   .mol__description {
-    padding: 10px 0 30px;
+    padding: 40px 0 60px;
     text-align: center;
     h1.caption {
       margin-bottom: 20px;
-      font-size: 22px;
+      font-size: 32px;
       color: white;
       font-weight: bold;
       text-align: center; // justify を無効にする
       &:first-letter {
-        font-size: 40px;
+        font-size: 50px;
       }
     }
     p {
       color: white;
       margin-bottom: 20px;
     }
+  }
+  a {
+    color: white;
+    text-decoration: underline;
   }
 }
 
@@ -129,6 +140,12 @@
             border-radius: 4px;
             @include box-shadow(1px, 1px, 4px, #e6e6e6, inset);
             padding: 8px;
+            &:hover {
+              background: white;
+            }
+            &:focus {
+              box-shadow:inset 0 0 10px #4c7fff;
+            }
           }
           .a__submit-thanks {
             box-sizing: border-box;
