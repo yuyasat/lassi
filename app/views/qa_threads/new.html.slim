@@ -36,14 +36,13 @@
           span.a__select
             = f.select :carrier, QaThread.carriers_i18n.invert, {}, {class:'a__plate'}
             // デフォルトの項目は "書きよりお選びください"
-        // 一旦除く
-          div
-            = label :qa_thread, :terminal, '端末'
-            = f.text_field :terminal
+        .moll__form
+          = label :qa_thread, :terminal, '端末', class: 'a__plate'
+          = f.text_field :terminal, { class: 'a__plate' }
         // 質問が集まってきたらラベル項目を設ける
-          div
-            = label :qa_thread, :terminal, 'ラベル'
-            = f.text_field :terminal
+        //  div
+        //    = label :qa_thread, :terminal, 'ラベル'
+        //    = f.text_field :terminal
         .mol__form
           = label :qa_thread, :content, '本文', class: 'a__plate a__required'
           = f.text_area :content, size: "60x10", placeholder:'わからないこと、解決したいことをお書きください', class:'a__plate'

@@ -23,11 +23,10 @@
         = label :qa_thread, :carrier, 'キャリア', class:"a__plate"
         .a__confirm-content
           = @qa_thread.carrier
-      // 現状とりあえず聞かない
-        .mol__form
-          = label :qa_thread, :terminal, '端末', class:"a__plate"
-          .a__confirm-content
-            = @qa_thread.terminal
+      .mol__form
+        = label :qa_thread, :terminal, '端末', class:"a__plate"
+        .a__confirm-content
+          = @qa_thread.terminal
       .mol__form
         = label :qa_thread, :content, '本文', class:"a__plate a__required"
         .a__confirm-content
