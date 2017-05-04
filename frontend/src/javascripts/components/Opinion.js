@@ -32,7 +32,7 @@ export default Vue.extend({
         </div>
       </div>
       <div class="mol__submit-wraper">
-        <input
+        <input type="submit"
           v-on:click="submitOpinion"
           class="a__button-basic"
           value="運営者にご意見を送る">

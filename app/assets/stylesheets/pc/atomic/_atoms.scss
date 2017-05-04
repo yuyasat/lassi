@@ -80,6 +80,9 @@ h2 {
         cursor: pointer;
         @include gradient(#f7f7f7, #e4e4e4, vertical);
       }
+      &:focus {
+        box-shadow: none;
+      }
     }
   }
 }
