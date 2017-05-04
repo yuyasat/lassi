@@ -36,7 +36,7 @@
           span.a__select
             = f.select :carrier, QaThread.carriers_i18n.invert, {}, {class:'a__plate'}
             // デフォルトの項目は "書きよりお選びください"
-        .moll__form
+        .mol__form
           = label :qa_thread, :terminal, '端末', class: 'a__plate'
           = f.text_field :terminal, { class: 'a__plate' }
         // 質問が集まってきたらラベル項目を設ける
