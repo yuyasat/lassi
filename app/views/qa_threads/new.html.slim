@@ -1,6 +1,6 @@
-.org__global-eyecatch
-  .mol__description
-    h1.caption
+.org__attention-eyecatch
+  .mol__eyecatch
+    h2.caption
       | 掲示板に質問してみよう！
     p
       | 自分にとってぴったりの格安SIMはなに？みんなどんな工夫をして使っている？<br>
@@ -17,7 +17,7 @@
             | トップ
       li itemprop="itemListElement"
         .a__breadcrumb_now itemprop="name" 質問を作成する
-.org__content
+.org__content.mm--new
   // 今は使わない
     .mol__eyecatch
       h2 掲示板に質問してみよう！
@@ -33,7 +33,7 @@
           = f.text_field :title, placeholder:'質問のタイトルをお書きください', class: 'a__plate'
         .mol__form
           = label :qa_thread, :carrier, 'ご自身が使っている通信キャリア', class: 'a__plate'
-          span
+          span.a__select
             = f.select :carrier, QaThread.carriers_i18n.invert, {}, {class:'a__plate'}
             // デフォルトの項目は "書きよりお選びください"
         // 一旦除く
@@ -49,6 +49,7 @@
           = f.text_area :content, size: "60x10", placeholder:'わからないこと、解決したいことをお書きください', class:'a__plate'
         .mol__button
           = f.submit '次に進む', class: 'a__button'
+          span.a__caution 確認画面に移動します
     .org__qa-thread-sidebar
       .mol__qa-pannel
         h2 よくある質問

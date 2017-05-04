@@ -39,8 +39,9 @@
 .org__content {
   display: block;
   width: 970px;
-  padding: 20px 20px 60px;
+  padding: 60px 20px;
   margin: auto;
+  text-align: left;
   .org__inner-content {
     @include simple-flex;
     .org__main {
@@ -90,6 +91,20 @@
   }
 }
 
+.org__attention-eyecatch {
+  display: block;
+  width: 970px;
+  padding: 60px 20px 20px;
+  margin: auto;
+  text-align: center;
+  h2 {
+    text-align: center;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
 .org__footer {
   background: white;
   .org__inner-footer {

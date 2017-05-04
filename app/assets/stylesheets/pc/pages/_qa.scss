@@ -14,3 +14,22 @@
     font-size: 16px;
   }
 }
+
+.org__content {
+  .mol__eyecatch {
+    margin-top: 40px;
+    text-align: center;
+  }
+  &.mm--confirm {
+    width: 600px;
+    padding-top: 60px;
+  }
+  &.mm--new {
+    padding-top: 10px;
+  }
+}
+
+// confirm 周り
+.a__confirm-content {
+  border-bottom: 1px solid #c1c1c1;
+}

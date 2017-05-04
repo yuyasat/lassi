@@ -15,7 +15,7 @@
 a.a__logo-link {
   height: 40px;
 }
-
+// ボタンのデザイン
 a.a__button, .a__button{
   display: inline-block;
   background-color: $main-color;
@@ -32,9 +32,42 @@ a.a__button, .a__button{
   }
 }
 
+a.a__button-basic, .a__button-basic {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid $basic-frame;
+  @include border-radius(3px);
+  @include gradient(#ffffff, #F1F1F1, vertical);
+  &:hover {
+    box-shadow: none;
+    cursor: pointer;
+    text-decoration: none;
+    @include gradient(#f7f7f7, #e4e4e4, vertical);
+  }
+}
+
+// 戻るボタンと確定ボタンを一緒に並べた時
+.mm__back-next {
+  @include simple-flex;
+  @include justify(space-around);
+  -webkit-align-items: flex-start; /* Safari */
+  align-items:         flex-start;
+  span.a__caution {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+
 h2 {
-  color: #6A6A6A;
+  color: $basic-content-text;
   font-size: 21px;
+  text-align: left;
 }
 
 .a__read-more {
@@ -61,8 +94,6 @@ h2 {
     }
   }
 }
-
-// form 系 css
 
 .mol__submit-wraper {
   padding-top: 4px;

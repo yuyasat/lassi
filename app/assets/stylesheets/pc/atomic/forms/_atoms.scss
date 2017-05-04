@@ -47,28 +47,28 @@ input, button, textarea, select {
 
 // select のスタイル
 .mol__form {
-  span {
-  position: relative;
-  select.a__plate {
-  padding-left: 60px;
-  }
-  &:before {
-  display: inline-block;
-  position: absolute;
-  top: 6px;
-  left: 34px;
-  @include fa("\f04b");
-  color: #94B1FA;
-  width: 10px;
-  height: 10px;
-  @include rotate(90deg);
-  @include transition(all,0.3s);
-  }
-  &:hover {
-  &:before {
-  top: 10px;
-  }
-  }
+  span.a__select {
+    position: relative;
+    select.a__plate {
+      padding-left: 60px;
+    }
+    &:before {
+      display: inline-block;
+      position: absolute;
+      top: 6px;
+      left: 34px;
+      @include fa("\f04b");
+      color: #94B1FA;
+      width: 10px;
+      height: 10px;
+      @include rotate(90deg);
+      @include transition(all,0.3s);
+    }
+    &:hover {
+      &:before {
+        top: 10px;
+      }
+    }
   }
 }
 
@@ -132,6 +132,7 @@ label {
       font-size: 11px;
       font-weight: bold;
       left: 0;
+      top: 2px;
     }
   }
 }
@@ -139,14 +140,14 @@ label {
 // input submit
 input[type="submit"] {
   &.a__button {
-  font-weight: bold;
-  font-size: 20px;
-  padding: 20px 40px;
-  display: block;
-  margin: auto;
-  &:hover {
-  cursor: pointer;
-  background: #ffb600;
-  }
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px 100px;
+    display: block;
+    margin: auto;
+    &:hover {
+      cursor: pointer;
+      background: #ffb600;
+    }
   }
 }
